@@ -1,0 +1,7 @@
+com\rony\controllers\HomeController.class
+com\rony\config\ApplicationInitializer.class
+com\rony\config\WebMvcConfig.class
+com\rony\services\UserService.class
+com\rony\models\User.class
+com\rony\controllers\UserController.class
+com\rony\config\RootConfig.class
