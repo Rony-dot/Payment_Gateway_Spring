@@ -7,7 +7,7 @@
 --%>
 <jsp:include page="common/header.jsp" />
 
-<img src="${pageContext.request.contextPath}/images/Topology.png">
+<%--<img class="rounded-circle border-dark " src="${pageContext.request.contextPath}/images/Topology.png">--%>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,6 +17,11 @@
 </head>
 <body>
 <h1 class="text-center text-danger text-uppercase">this is home page</h1>
+
+
+<a class="text-primary" href="/users/all" a> all user </a>
+<a class="text-primary" href="/users/add" a> add user </a>
+
 </body>
 </html>
 

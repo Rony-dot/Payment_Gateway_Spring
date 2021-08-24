@@ -1,7 +1,10 @@
 com\rony\controllers\HomeController.class
-com\rony\config\ApplicationInitializer.class
-com\rony\config\WebMvcConfig.class
+com\rony\WebMvcConfig.class
+com\rony\config\HibernateConfig.class
+com\rony\HelperSingleton.class
 com\rony\services\UserService.class
 com\rony\models\User.class
 com\rony\controllers\UserController.class
-com\rony\config\RootConfig.class
+com\rony\ApplicationInitializer.class
+com\rony\services\BaseService.class
+com\rony\RootConfig.class

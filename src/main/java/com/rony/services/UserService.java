@@ -7,19 +7,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService extends BaseService<User>{
 
     private List<User> userList;
 
     public UserService() {
-        this.userList = new ArrayList<>();
+        super(new User());
+        userList = new ArrayList<>();
     }
 
     public List<User> allUsers(){
-        return this.userList;
+        List<User> userList = getAll();
+        return userList;
     }
 
     public void addUser(User user) {
         this.userList.add(user);
+        save(user);
     }
+
+    public void deleteUser(User user){
+        delete(user);
+    }
+
 }

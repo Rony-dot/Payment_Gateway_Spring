@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.id.uuid.Helper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -15,9 +16,11 @@ import javax.persistence.criteria.CriteriaQuery;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Properties;
 
 public abstract class BaseService<T> {
+
     private SessionFactory sessionFactory;
     private Session session;
     private T model;
@@ -96,6 +99,23 @@ public abstract class BaseService<T> {
         tx.commit();
     }
 
+    public List<T> getAll(){
+        var session = getSession();
+        var tx = session.getTransaction();
+        if (!tx.isActive()) {
+            tx = session.beginTransaction();
+        }
+        var cb = getCriteriaBuilder();
+        var cq = cb.createQuery(model.getClass());
+        var root = cq.from(model.getClass());
+
+        var result =  query(cq).getResultList();
+        session.flush();
+        tx.commit();
+
+        return (List<T>) result;
+    }
+
 //    public T getById(String id){
 //        var session = getSession();
 //        var tx = session.getTransaction();
@@ -113,7 +133,7 @@ public abstract class BaseService<T> {
 //        tx.commit();
 //        return (model.getClass()) result;
 //    }
-//
+
 
     public CriteriaBuilder getCriteriaBuilder(){
         var session = getSession();

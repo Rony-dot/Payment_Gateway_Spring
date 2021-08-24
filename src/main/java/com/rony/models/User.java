@@ -1,24 +1,27 @@
 package com.rony.models;
 
 
-public class User {
-    private long id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+public class User extends BaseModel{
+
+    @NotNull(message = "name cannot be null")
+    @Size(min = 4, max = 10, message
+            = "Name must be between 4 and 10 characters")
     private  String name;
 
     public User() {
     }
 
-    public User(long id, String name) {
-        this.id = id;
+    public User( String name) {
+
         this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -31,8 +34,8 @@ public class User {
 
     @Override
     public String toString() {
+        super.toString();
         return "User{" +
-                "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
     }
