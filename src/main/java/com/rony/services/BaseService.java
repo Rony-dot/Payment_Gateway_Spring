@@ -113,6 +113,7 @@ public abstract class BaseService<T> {
 //        tx.commit();
 //        return (model.getClass()) result;
 //    }
+//
 
     public CriteriaBuilder getCriteriaBuilder(){
         var session = getSession();
