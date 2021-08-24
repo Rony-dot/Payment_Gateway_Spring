@@ -1,0 +1,3 @@
+// ------------------- TODO tasks below ------------------
+1. create a singleton class for printing and logging errors
+
