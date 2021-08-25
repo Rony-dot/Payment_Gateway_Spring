@@ -30,16 +30,30 @@
     <c:choose>
         <c:when test="${errorMsg != null}" >
             <div class="alert alert-danger" role="alert">
-                ${errorMsg}
+                <p>error msg</p>
+                    ${errorMsg}
+
+            </div>
+        </c:when>
+        <c:when test="${error != null}" >
+            <div class="alert alert-danger" role="alert">
+                <p>error</p>
+                ${error}
+
             </div>
         </c:when>
         <c:otherwise>
             you are good to go!
+
         </c:otherwise>
     </c:choose>
 
-<form:errors path="user" cssClass="error" />
-    <form:form action="${pageContext.request.contextPath}/users/add" modelAttribute="user">
+
+    <form:errors path="user.*" cssClass="error" />
+
+    <form:form action="${pageContext.request.contextPath}/users/add"
+               modelAttribute="user">
+
 <%--        <form:errors path="*" cssClass="errorblock" element="div" />--%>
 
         <form:input path="id" hidden="true"/>

@@ -1,6 +1,8 @@
 package com.rony.models;
 
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,7 @@ public class User extends BaseModel{
 //    @NotEmpty(message = "name cannot be empty")
     @Size(min = 4, max = 10, message
             = "Name must be between 4 and 10 characters")
+    @Value("#()")
     private  String name;
 
     public User() {
