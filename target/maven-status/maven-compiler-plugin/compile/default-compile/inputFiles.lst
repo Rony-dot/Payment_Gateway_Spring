@@ -4,6 +4,7 @@ E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\services\Use
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\config\HibernateConfig.java
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\controllers\HomeController.java
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\HelperSingleton.java
+E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\models\BaseModel.java
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\models\User.java
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\RootConfig.java
 E:\Pondit Java Spring\Payment_Gateway_Spring\src\main\java\com\rony\controllers\UserController.java

@@ -1,6 +1,7 @@
 com\rony\controllers\HomeController.class
 com\rony\WebMvcConfig.class
 com\rony\config\HibernateConfig.class
+com\rony\models\BaseModel.class
 com\rony\HelperSingleton.class
 com\rony\services\UserService.class
 com\rony\models\User.class
